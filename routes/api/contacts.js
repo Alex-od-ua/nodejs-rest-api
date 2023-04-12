@@ -1,5 +1,7 @@
 const express = require("express");
 
+const { isValidId } = require("../../middlewares");
+
 const {
   getAllContacts,
   getContactById,
@@ -19,14 +21,14 @@ const router = express.Router();
 
 router.get("/", getAllContacts);
 
-router.get("/:contactId", getContactById);
+router.get("/:contactId", isValidId, getContactById);
 
 router.post("/", addContactsValidation, addContact);
 
-router.delete("/:contactId", deleteContact);
+router.delete("/:contactId", isValidId, deleteContact);
 
-router.put("/:contactId", updateContactsValidation, updateContact);
+router.put("/:contactId", isValidId, updateContactsValidation, updateContact);
 
-router.patch("/:contactId/favorite", updateFavoriteValidation, updateFavoriteById);
+router.patch("/:contactId/favorite", isValidId, updateFavoriteValidation, updateFavoriteById);
 
 module.exports = router;

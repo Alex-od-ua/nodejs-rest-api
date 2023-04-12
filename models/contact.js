@@ -7,28 +7,24 @@ const { HttpError } = require("../helpers");
 
 const { handleMongooseError } = require("../utils");
 
-const contactSchema = new Schema(
-  {
-    name: {
-      type: String,
-      required: [true, "name must be exist"],
-    },
-    email: {
-      type: String,
-      required: [true, "email must be exist"],
-    },
-    phone: {
-      type: String,
-      required: true,
-    },
-    favorite: {
-      type: Boolean,
-      default: false,
-    },
+const contactSchema = new Schema({
+  name: {
+    type: String,
+    required: [true, "name must be exist"],
   },
-
-  { versionKey: false, timestamps: true }
-);
+  email: {
+    type: String,
+    required: [true, "email must be exist"],
+  },
+  phone: {
+    type: String,
+    required: true,
+  },
+  favorite: {
+    type: Boolean,
+    default: false,
+  },
+});
 
 contactSchema.post("save", handleMongooseError);
 
@@ -36,7 +32,7 @@ const addContactsSchema = Joi.object({
   name: Joi.string().required(),
   email: Joi.string().email().required(),
   phone: Joi.string().required(),
-  favorite: Joi.boolean().required(),
+  favorite: Joi.boolean(),
 }).unknown(false);
 
 const updateContactsSchema = Joi.object({
@@ -72,12 +68,7 @@ const updateContactsValidation = (req, _, next) => {
 };
 
 const updateFavoriteValidation = (req, _, next) => {
-  const { contactId } = req.params;
   const { error } = updateFovoriteSchema.validate(req.body);
-
-  if (!isValidObjectId(contactId)) {
-    throw HttpError(404, "Not found");
-  }
 
   if (error) {
     throw HttpError(400, "Missing field favorite");

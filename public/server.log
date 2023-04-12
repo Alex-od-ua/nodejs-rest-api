@@ -131,3 +131,10 @@ Method:PATCH, URL:/api/contacts/643377c55903feace73ef02a/favorite, Date:10-04-20
 Method:PATCH, URL:/api/contacts/643377c55903feace73ef021/favorite, Date:10-04-2023_07:25:55
 Method:PATCH, URL:/api/contacts/643377c55903feace73ef021/favorite, Date:10-04-2023_07:27:47
 Method:PATCH, URL:/api/contacts/643377c55903fece73ef021/favorite, Date:10-04-2023_07:27:51
+Method:GET, URL:/api/contacts/642ed324e8da1b489888f241, Date:12-04-2023_08:42:24
+Method:GET, URL:/api/contacts/642ed324e8da1b489888f241, Date:12-04-2023_08:46:13
+Method:GET, URL:/api/contacts/642ed324e8da1b48, Date:12-04-2023_08:46:20
+Method:GET, URL:/api/contacts/642ed324e8da1b48, Date:12-04-2023_10:15:17
+Method:GET, URL:/api/contacts/642ed324e8da1b48, Date:12-04-2023_10:15:57
+Method:POST, URL:/api/contacts/, Date:12-04-2023_10:20:00
+Method:POST, URL:/api/contacts/, Date:12-04-2023_10:20:43
