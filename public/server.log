@@ -138,3 +138,10 @@ Method:GET, URL:/api/contacts/642ed324e8da1b48, Date:12-04-2023_10:15:17
 Method:GET, URL:/api/contacts/642ed324e8da1b48, Date:12-04-2023_10:15:57
 Method:POST, URL:/api/contacts/, Date:12-04-2023_10:20:00
 Method:POST, URL:/api/contacts/, Date:12-04-2023_10:20:43
+Method:GET, URL:/api/contacts/12345, Date:12-04-2023_10:37:50
+Method:GET, URL:/api/contacts/642ed324e8da1b489a8ef241, Date:12-04-2023_10:38:02
+Method:GET, URL:/api/contacts/642ed324e8da1b489a8ef241, Date:12-04-2023_10:38:04
+Method:GET, URL:/api/contacts/642ed324e8da1b489a8ef241, Date:12-04-2023_10:38:31
+Method:GET, URL:/api/contacts/642ed324e8da1b, Date:12-04-2023_10:38:35
+Method:GET, URL:/api/contacts/1234, Date:12-04-2023_10:38:41
+Method:GET, URL:/api/contacts/642ed324e8da1b489a8ef241, Date:12-04-2023_10:38:46
