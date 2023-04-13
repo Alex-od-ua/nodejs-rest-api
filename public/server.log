@@ -150,3 +150,4 @@ Method:POST, URL:/api/auth/register, Date:13-04-2023_11:29:46
 Method:GET, URL:/api/contacts/, Date:13-04-2023_11:30:26
 Method:POST, URL:/api/contacts/, Date:13-04-2023_11:31:09
 Method:POST, URL:/api/contacts/, Date:13-04-2023_11:31:59
+Method:POST, URL:/api/auth/register, Date:13-04-2023_11:51:48
