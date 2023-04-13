@@ -7,24 +7,27 @@ const { HttpError } = require("../helpers");
 
 const { handleMongooseError } = require("../utils");
 
-const contactSchema = new Schema({
-  name: {
-    type: String,
-    required: [true, "name must be exist"],
+const contactSchema = new Schema(
+  {
+    name: {
+      type: String,
+      required: [true, "name must be exist"],
+    },
+    email: {
+      type: String,
+      required: [true, "email must be exist"],
+    },
+    phone: {
+      type: String,
+      required: true,
+    },
+    favorite: {
+      type: Boolean,
+      default: false,
+    },
   },
-  email: {
-    type: String,
-    required: [true, "email must be exist"],
-  },
-  phone: {
-    type: String,
-    required: true,
-  },
-  favorite: {
-    type: Boolean,
-    default: false,
-  },
-});
+  { versionKey: false }
+);
 
 contactSchema.post("save", handleMongooseError);
 
