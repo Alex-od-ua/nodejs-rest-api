@@ -5,7 +5,7 @@ const cors = require("cors");
 const fs = require("fs/promises");
 const moment = require("moment");
 
-const authRouter = require("./routes/api/auth-routes");
+const userRouter = require("./routes/api/auth-routes");
 const contactsRouter = require("./routes/api/contacts-routes");
 
 const app = express();
@@ -25,7 +25,7 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.use("/api/auth", authRouter);
+app.use("/api/user", userRouter);
 app.use("/api/contacts", contactsRouter);
 
 app.use((req, res) => {
