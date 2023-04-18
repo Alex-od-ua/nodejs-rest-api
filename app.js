@@ -25,7 +25,7 @@ app.use(async (req, res, next) => {
   next();
 });
 
-app.use("/api/users", userRouter);
+app.use("/users", userRouter);
 app.use("/api/contacts", contactsRouter);
 
 app.use((req, res) => {
