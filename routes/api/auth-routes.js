@@ -20,6 +20,6 @@ router.post("/logout", authenficate, ctrl.logout);
 
 router.patch("/", authenficate, validateBody(schemas.subscriptionSchema), ctrl.updateSubscription);
 
-router.patch("/avatars", authenficate, upload.single("avatar"), ctrl.updateAvatar); // поменять может только тот кто залогинелся( ожидаем в поле avatar один файл)
+router.patch("/avatars", authenficate, upload.single("avatar"), ctrl.updateAvatar); 
 
 module.exports = router;
