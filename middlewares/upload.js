@@ -7,7 +7,7 @@ const multerConfig = multer.diskStorage({
   destination: tempDir,
   filename: (req, file, cb) => {
     cb(null, file.originalname);
-    req.filename = file.originalname;
+    req.imagefilename = file.originalname;
   },
 });
 
