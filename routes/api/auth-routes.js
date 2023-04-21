@@ -4,7 +4,7 @@ const ctrl = require("../../controllers/auth-controllers");
 
 const { validateBody } = require("../../utils");
 
-const { authenficate, upload } = require("../../middlewares");
+const { authenficate, upload, imageCompression } = require("../../middlewares");
 
 const { schemas } = require("../../models/user");
 
@@ -20,6 +20,12 @@ router.post("/logout", authenficate, ctrl.logout);
 
 router.patch("/", authenficate, validateBody(schemas.subscriptionSchema), ctrl.updateSubscription);
 
-router.patch("/avatars", authenficate, upload.single("avatar"), ctrl.updateAvatar); // поменять может только тот кто залогинелся( ожидаем в поле avatar один файл)
+router.patch(
+  "/avatars",
+  authenficate,
+  upload.single("avatar"),
+  imageCompression,
+  ctrl.updateAvatar
+);
 
 module.exports = router;
