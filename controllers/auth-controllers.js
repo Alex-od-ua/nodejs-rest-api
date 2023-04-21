@@ -67,7 +67,9 @@ const login = async (req, res) => {
 const getCurrent = async (req, res) => {
   const { email } = req.user;
 
-  res.json({ email: email, subscription: "starter" });
+  const user = await User.findOne({ email });
+
+  res.json({ email: email, subscription: user.subscription });
 };
 
 const logout = async (req, res) => {
@@ -108,7 +110,7 @@ const updateAvatar = async (req, res) => {
   const avatarURL = path.join("avatars", avatarName);
   await User.findByIdAndUpdate(_id, { avatarURL });
 
-  res.json({ avatarURL });
+  res.json({ avatarURL: avatarURL });
 };
 
 module.exports = {
